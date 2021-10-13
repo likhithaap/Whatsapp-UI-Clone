@@ -70,14 +70,25 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold(
+    
+
+    return DefaultTabController( 
+    length: 3,
+     child :Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
         backgroundColor: Color(0xff085E55),
+        bottom: TabBar(tabs: [
+          Tab(text: "CHATS",),
+          Tab(text: "STATUS",),
+          Tab(text: "CALLS",),
+        ]),
         actions: [
-          IconButton(onPressed:()=>{} 
-        , icon:Icon(Icons.search),),
-        IconButton(onPressed: ()=>{}, icon: Icon(Icons.more_vert))
+          IconButton(
+            onPressed: () => {},
+            icon: Icon(Icons.search),
+          ),
+          IconButton(onPressed: () => {}, icon: Icon(Icons.more_vert))
         ],
       ),
       body: Center(
@@ -112,9 +123,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
         child: const Icon(Icons.add),
+        tooltip: 'Increment',
       ), // This trailing comma makes auto-formatting nicer for build methods.
+      )
     );
   }
 }
