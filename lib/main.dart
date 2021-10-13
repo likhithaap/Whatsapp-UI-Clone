@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Whatsapp'),
+      home: const MyHomePage(title: 'WhatsApp'),
     );
   }
 }
@@ -70,63 +70,83 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    
 
-    return DefaultTabController( 
-    length: 3,
-     child :Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        backgroundColor: Color(0xff085E55),
-        bottom: TabBar(tabs: [
-          Tab(text: "CHATS",),
-          Tab(text: "STATUS",),
-          Tab(text: "CALLS",),
-        ]),
-        actions: [
-          IconButton(
-            onPressed: () => {},
-            icon: Icon(Icons.search),
+    return DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text(widget.title),
+            backgroundColor: Color(0xff085E55),
+            bottom: TabBar(tabs: [
+              Tab(
+                text: "CHATS",
+              ),
+              Tab(
+                text: "STATUS",
+              ),
+              Tab(
+                text: "CALLS",
+              ),
+            ]),
+            actions: [
+              IconButton(
+                onPressed: () => {},
+                icon: Icon(Icons.search),
+              ),
+              IconButton(onPressed: () => {}, icon: Icon(Icons.more_vert))
+            ],
           ),
-          IconButton(onPressed: () => {}, icon: Icon(Icons.more_vert))
-        ],
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        child: const Icon(Icons.add),
-        tooltip: 'Increment',
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-      )
-    );
+          body: Column(children: [
+            Expanded(
+                child:  
+                ListView(
+              children: <Widget>[
+                ListTile(
+                  title: Text('Keer'),
+                  subtitle: Text('See you tom'),
+                  leading: CircleAvatar(
+                    radius: 24.0,
+                    child: ClipRRect(
+                      child: Image.network('https://picsum.photos/250?image=9'),
+                      borderRadius: BorderRadius.circular(50.0),
+                    ),
+                  ),
+                  trailing: Text('12:40 AM'),
+                ),
+                ListTile(
+                  title: Text('CC'),
+                  subtitle: Text('Okayyyy'),
+                  leading: CircleAvatar(
+                    radius: 24.0,
+                    child: ClipRRect(
+                      child: Image.network('https://picsum.photos/250?image=9'),
+                      borderRadius: BorderRadius.circular(50.0),
+                    ),
+                  ),
+                  trailing: Text('Yesterday'),
+                ),
+                ListTile(
+                  title: Text('NanRaj'),
+                  subtitle: Text('Byee byee'),
+                  leading: CircleAvatar(
+                    radius: 24.0,
+                    child: ClipRRect(
+                      child: Image.network('https://picsum.photos/250?image=9'),
+                      borderRadius: BorderRadius.circular(50.0),
+                    ),
+                  ),
+                  trailing: Text('Monday'),
+                ),
+              ],
+            ))
+          ]),
+
+          floatingActionButton: FloatingActionButton(
+            onPressed: ()=>{},
+            child: const Icon(Icons.chat_bubble),
+            backgroundColor: Color(0xff20C253),
+            tooltip: 'Increment',
+          ), // This trailing comma makes auto-formatting nicer for build methods.
+        ));
   }
 }
