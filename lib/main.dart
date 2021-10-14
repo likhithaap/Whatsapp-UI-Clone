@@ -14,6 +14,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        indicatorColor: Colors.white,
+
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        // primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'WhatsApp'),
     );
@@ -76,8 +78,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Scaffold(
           appBar: AppBar(
             title: Text(widget.title),
-            backgroundColor: Color(0xff085E55),
-            bottom: TabBar(tabs: [
+            backgroundColor: const Color(0xff085E55),
+            bottom: const TabBar(tabs: [
               Tab(
                 text: "CHATS",
               ),
@@ -93,13 +95,61 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () => {},
                 icon: Icon(Icons.search),
               ),
-              IconButton(onPressed: () => {}, icon: Icon(Icons.more_vert))
+              PopupMenuButton(
+                icon: const Icon(Icons
+                    .more_vert), //don't specify icon if you want 3 dot menu
+                color: Colors.white,
+                itemBuilder: (context) => [
+                  const PopupMenuItem<int>(
+                    value: 0,
+                    child: Text(
+                      "New group",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                  const PopupMenuItem<int>(
+                    value: 0,
+                    child: Text(
+                      "New broadcast",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                  const PopupMenuItem<int>(
+                    value: 0,
+                    child: Text(
+                      "Linked devices",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                  const PopupMenuItem<int>(
+                    value: 0,
+                    child: Text(
+                      "Starred messages",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                  const PopupMenuItem<int>(
+                    value: 0,
+                    child: Text(
+                      "Payments",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                  const PopupMenuItem<int>(
+                    value: 0,
+                    child: Text(
+                      "Settings",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                ],
+                onSelected: (item) => {print(item)},
+              ),
             ],
           ),
           body: Column(children: [
             Expanded(
-                child:  
-                ListView(
+                child: ListView(
               children: <Widget>[
                 ListTile(
                   title: Text('Keer'),
@@ -142,7 +192,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ]),
 
           floatingActionButton: FloatingActionButton(
-            onPressed: ()=>{},
+            onPressed: () => {},
             child: const Icon(Icons.chat_bubble),
             backgroundColor: Color(0xff20C253),
             tooltip: 'Increment',
