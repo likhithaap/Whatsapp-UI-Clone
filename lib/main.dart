@@ -271,7 +271,30 @@ class _MyHomePageState extends State<MyHomePage> {
                         Icons.call,
                         color: Color(0xff085E55),
                       ),
-                    )
+                    ),
+                    ListTile(
+                      title: Text(
+                        "Kannss",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      subtitle: Row(children: <Widget>[
+                        Icon(Icons.call_received,
+                        color: Colors.red,
+                        size: 19,),
+                        Text("  15 October, 10:09pm")
+                      ]),
+                      leading: CircleAvatar(
+                        radius: 24.0,
+                        child: ClipRRect(
+                          child: Image.network('https://i.pravatar.cc/220'),
+                          borderRadius: BorderRadius.circular(50.0),
+                        ),
+                      ),
+                      trailing: Icon(
+                        Icons.videocam,
+                        color: Color(0xff085E55),
+                      ),
+                    ),
                   ],
                 ))
               ]),
