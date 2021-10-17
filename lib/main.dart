@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -113,533 +115,168 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-          body: Column(children: [
-            Expanded(
-                child: ListView(
-              children: <Widget>[
-                ListTile(
-                    title: Text('Keer',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
+          body: TabBarView(
+            children: [
+              Column(children: [
+                Expanded(
+                    child: ListView(
+                  children: <Widget>[
+                    ListTile(
+                        title: Text('Keer',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            )),
+                        subtitle: Text('See you tom'),
+                        leading: CircleAvatar(
+                          radius: 24.0,
+                          child: ClipRRect(
+                            child: Image.network('https://i.pravatar.cc/250'),
+                            borderRadius: BorderRadius.circular(50.0),
+                          ),
+                        ),
+                        trailing: Column(
+                          children: [
+                            Text(
+                              '12:40 AM',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Color(0xff20C253),
+                              ),
+                            ),
+                            SizedBox(height: 12),
+                            CircleAvatar(
+                              backgroundColor: Color(0xff20C253),
+                              child: const Text(
+                                '1',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                              radius: 11,
+                            ),
+                          ],
                         )),
-                    subtitle: Text('See you tom'),
-                    leading: CircleAvatar(
-                      radius: 24.0,
-                      child: ClipRRect(
-                        child: Image.network('https://i.pravatar.cc/250'),
-                        borderRadius: BorderRadius.circular(50.0),
+                    ListTile(
+                      title: Text('CC',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          )),
+                      subtitle: Text('Okayyyy'),
+                      leading: CircleAvatar(
+                        radius: 24.0,
+                        child: ClipRRect(
+                          child: Image.network('https://i.pravatar.cc/200'),
+                          borderRadius: BorderRadius.circular(50.0),
+                        ),
+                      ),
+                      trailing: Text('Yesterday'),
+                    ),
+                    ListTile(
+                      title: Text('NanRaj',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          )),
+                      subtitle: Text('Byee byee'),
+                      leading: CircleAvatar(
+                        radius: 24.0,
+                        child: ClipRRect(
+                          child: Image.network('https://i.pravatar.cc/300'),
+                          borderRadius: BorderRadius.circular(50.0),
+                        ),
+                      ),
+                      trailing: Text('Monday'),
+                    ),
+                  ],
+                ))
+              ]),
+              Column(children: [
+                Expanded(
+                    child: ListView(
+                  children: <Widget>[
+                    ListTile(
+                      title: Text("nama"),
+                    )
+                  ],
+                ))
+              ]),
+              Column(children: [
+                Expanded(
+                    child: ListView(
+                  children: <Widget>[
+                    ListTile(
+                      title: Text(
+                        "Boo",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      subtitle: Row(children: <Widget>[
+                        Icon(Icons.call_made,
+                        color: Color(0xff20C253),
+                        size: 19,),
+                        Text("  Yesterday, 11:24pm")
+                      ]),
+                      leading: CircleAvatar(
+                        radius: 24.0,
+                        child: ClipRRect(
+                          child: Image.network('https://i.pravatar.cc/200'),
+                          borderRadius: BorderRadius.circular(50.0),
+                        ),
+                      ),
+                      trailing: Icon(
+                        Icons.call,
+                        color: Color(0xff085E55),
                       ),
                     ),
-                    trailing: Column(
-                      children: [
-                        Text(
-                          '12:40 AM',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Color(0xff20C253),
-                          ),
+                     ListTile(
+                      title: Text(
+                        "Chandu",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      subtitle: Row(children: <Widget>[
+                        Icon(Icons.call_received,
+                        color: Colors.red,
+                        size: 19,),
+                        Text("  15 October, 10:09pm")
+                      ]),
+                      leading: CircleAvatar(
+                        radius: 24.0,
+                        child: ClipRRect(
+                          child: Image.network('https://i.pravatar.cc/250'),
+                          borderRadius: BorderRadius.circular(50.0),
                         ),
-                        SizedBox(height: 12),
-                        CircleAvatar(
-                          backgroundColor: Color(0xff20C253),
-                          child: const Text(
-                            '1',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          radius: 11,
-                        ),
-                      ],
-                    )),
-                ListTile(
-                  title: Text('CC',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Okayyyy'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/200'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Yesterday'),
-                ),
-                ListTile(
-                  title: Text('NanRaj',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Byee byee'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/300'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Monday'),
-                ),
-                ListTile(
-                    title: Text('Keer',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        )),
-                    subtitle: Text('See you tom'),
-                    leading: CircleAvatar(
-                      radius: 24.0,
-                      child: ClipRRect(
-                        child: Image.network('https://i.pravatar.cc/250'),
-                        borderRadius: BorderRadius.circular(50.0),
+                      ),
+                      trailing: Icon(
+                        Icons.call,
+                        color: Color(0xff085E55),
                       ),
                     ),
-                    trailing: Column(
-                      children: [
-                        Text(
-                          '12:40 AM',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Color(0xff20C253),
-                          ),
-                        ),
-                        SizedBox(height: 12),
-                        CircleAvatar(
-                          backgroundColor: Color(0xff20C253),
-                          child: const Text(
-                            '1',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          radius: 11,
-                        ),
-                      ],
-                    )),
-                ListTile(
-                  title: Text('CC',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Okayyyy'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/200'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Yesterday'),
-                ),
-                ListTile(
-                  title: Text('NanRaj',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Byee byee'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/300'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Monday'),
-                ),
-                ListTile(
-                    title: Text('Keer',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        )),
-                    subtitle: Text('See you tom'),
-                    leading: CircleAvatar(
-                      radius: 24.0,
-                      child: ClipRRect(
-                        child: Image.network('https://i.pravatar.cc/250'),
-                        borderRadius: BorderRadius.circular(50.0),
+                    ListTile(
+                      title: Text(
+                        "Idkman",
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                    ),
-                    trailing: Column(
-                      children: [
-                        Text(
-                          '12:40 AM',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Color(0xff20C253),
-                          ),
+                      subtitle: Row(children: <Widget>[
+                        Icon(Icons.call_received,
+                        color: Color(0xff20C253),
+                        size: 19,),
+                        Text("  14 October, 10:00am")
+                      ]),
+                      leading: CircleAvatar(
+                        radius: 24.0,
+                        child: ClipRRect(
+                          child: Image.network('https://i.pravatar.cc/600'),
+                          borderRadius: BorderRadius.circular(50.0),
                         ),
-                        SizedBox(height: 12),
-                        CircleAvatar(
-                          backgroundColor: Color(0xff20C253),
-                          child: const Text(
-                            '1',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          radius: 11,
-                        ),
-                      ],
-                    )),
-                ListTile(
-                  title: Text('CC',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Okayyyy'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/200'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Yesterday'),
-                ),
-                ListTile(
-                  title: Text('NanRaj',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Byee byee'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/300'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Monday'),
-                ),
-                ListTile(
-                    title: Text('Keer',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        )),
-                    subtitle: Text('See you tom'),
-                    leading: CircleAvatar(
-                      radius: 24.0,
-                      child: ClipRRect(
-                        child: Image.network('https://i.pravatar.cc/250'),
-                        borderRadius: BorderRadius.circular(50.0),
                       ),
-                    ),
-                    trailing: Column(
-                      children: [
-                        Text(
-                          '12:40 AM',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Color(0xff20C253),
-                          ),
-                        ),
-                        SizedBox(height: 12),
-                        CircleAvatar(
-                          backgroundColor: Color(0xff20C253),
-                          child: const Text(
-                            '1',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          radius: 11,
-                        ),
-                      ],
-                    )),
-                ListTile(
-                  title: Text('CC',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Okayyyy'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/200'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Yesterday'),
-                ),
-                ListTile(
-                  title: Text('NanRaj',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Byee byee'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/300'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Monday'),
-                ),
-                ListTile(
-                    title: Text('Keer',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        )),
-                    subtitle: Text('See you tom'),
-                    leading: CircleAvatar(
-                      radius: 24.0,
-                      child: ClipRRect(
-                        child: Image.network('https://i.pravatar.cc/250'),
-                        borderRadius: BorderRadius.circular(50.0),
+                      trailing: Icon(
+                        Icons.call,
+                        color: Color(0xff085E55),
                       ),
-                    ),
-                    trailing: Column(
-                      children: [
-                        Text(
-                          '12:40 AM',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Color(0xff20C253),
-                          ),
-                        ),
-                        SizedBox(height: 12),
-                        CircleAvatar(
-                          backgroundColor: Color(0xff20C253),
-                          child: const Text(
-                            '1',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          radius: 11,
-                        ),
-                      ],
-                    )),
-                ListTile(
-                  title: Text('CC',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Okayyyy'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/200'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Yesterday'),
-                ),
-                ListTile(
-                  title: Text('NanRaj',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Byee byee'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/300'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Monday'),
-                ),
-                ListTile(
-                    title: Text('Keer',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        )),
-                    subtitle: Text('See you tom'),
-                    leading: CircleAvatar(
-                      radius: 24.0,
-                      child: ClipRRect(
-                        child: Image.network('https://i.pravatar.cc/250'),
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                    ),
-                    trailing: Column(
-                      children: [
-                        Text(
-                          '12:40 AM',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Color(0xff20C253),
-                          ),
-                        ),
-                        SizedBox(height: 12),
-                        CircleAvatar(
-                          backgroundColor: Color(0xff20C253),
-                          child: const Text(
-                            '1',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          radius: 11,
-                        ),
-                      ],
-                    )),
-                ListTile(
-                  title: Text('CC',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Okayyyy'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/200'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Yesterday'),
-                ),
-                ListTile(
-                  title: Text('NanRaj',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Byee byee'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/300'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Monday'),
-                ),
-                ListTile(
-                    title: Text('Keer',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        )),
-                    subtitle: Text('See you tom'),
-                    leading: CircleAvatar(
-                      radius: 24.0,
-                      child: ClipRRect(
-                        child: Image.network('https://i.pravatar.cc/250'),
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                    ),
-                    trailing: Column(
-                      children: [
-                        Text(
-                          '12:40 AM',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Color(0xff20C253),
-                          ),
-                        ),
-                        SizedBox(height: 12),
-                        CircleAvatar(
-                          backgroundColor: Color(0xff20C253),
-                          child: const Text(
-                            '1',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          radius: 11,
-                        ),
-                      ],
-                    )),
-                ListTile(
-                  title: Text('CC',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Okayyyy'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/200'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Yesterday'),
-                ),
-                ListTile(
-                  title: Text('NanRaj',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Byee byee'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/300'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Monday'),
-                ),
-                ListTile(
-                    title: Text('Keer',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        )),
-                    subtitle: Text('See you tom'),
-                    leading: CircleAvatar(
-                      radius: 24.0,
-                      child: ClipRRect(
-                        child: Image.network('https://i.pravatar.cc/250'),
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                    ),
-                    trailing: Column(
-                      children: [
-                        Text(
-                          '12:40 AM',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Color(0xff20C253),
-                          ),
-                        ),
-                        SizedBox(height: 12),
-                        CircleAvatar(
-                          backgroundColor: Color(0xff20C253),
-                          child: const Text(
-                            '1',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          radius: 11,
-                        ),
-                      ],
-                    )),
-                ListTile(
-                  title: Text('CC',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Okayyyy'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/200'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Yesterday'),
-                ),
-                ListTile(
-                  title: Text('NanRaj',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      )),
-                  subtitle: Text('Byee byee'),
-                  leading: CircleAvatar(
-                    radius: 24.0,
-                    child: ClipRRect(
-                      child: Image.network('https://i.pravatar.cc/300'),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                  ),
-                  trailing: Text('Monday'),
-                ),
-              ],
-            ))
-          ]),
+                    )
+                  ],
+                ))
+              ]),
+            ],
+          ),
           floatingActionButton: FloatingActionButton(
             onPressed: () => {},
             child: const Icon(Icons.chat_bubble),
