@@ -194,8 +194,36 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: ListView(
                   children: <Widget>[
                     ListTile(
-                      title: Text("nama"),
-                    )
+                        title: Text(
+                          "My status",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        subtitle: Text("Tap to add status update"),
+                        leading: Stack(
+                          children: [
+                            CircleAvatar(
+                              radius: 24.0,
+                              child: ClipRRect(
+                                child:
+                                    Image.network('https://i.pravatar.cc/200'),
+                                borderRadius: BorderRadius.circular(50.0),
+                              ),
+                            ),
+                            Positioned(
+                                bottom: 0,
+                                right: 0,
+                                child: CircleAvatar(
+                                  radius: 9,
+                                  backgroundColor: Color(0xff085E55),
+                                  
+                                  child: Icon(
+                                    Icons.add,
+                                    size: 17,
+                                    color: Colors.white,
+                                  ),
+                                ))
+                          ],
+                        ))
                   ],
                 ))
               ]),
@@ -209,9 +237,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       subtitle: Row(children: <Widget>[
-                        Icon(Icons.call_made,
-                        color: Color(0xff20C253),
-                        size: 19,),
+                        Icon(
+                          Icons.call_made,
+                          color: Color(0xff20C253),
+                          size: 19,
+                        ),
                         Text("  Yesterday, 11:24pm")
                       ]),
                       leading: CircleAvatar(
@@ -226,15 +256,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         color: Color(0xff085E55),
                       ),
                     ),
-                     ListTile(
+                    ListTile(
                       title: Text(
                         "Chandu",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       subtitle: Row(children: <Widget>[
-                        Icon(Icons.call_received,
-                        color: Colors.red,
-                        size: 19,),
+                        Icon(
+                          Icons.call_received,
+                          color: Colors.red,
+                          size: 19,
+                        ),
                         Text("  15 October, 10:09pm")
                       ]),
                       leading: CircleAvatar(
@@ -255,9 +287,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       subtitle: Row(children: <Widget>[
-                        Icon(Icons.call_received,
-                        color: Color(0xff20C253),
-                        size: 19,),
+                        Icon(
+                          Icons.call_received,
+                          color: Color(0xff20C253),
+                          size: 19,
+                        ),
                         Text("  14 October, 10:00am")
                       ]),
                       leading: CircleAvatar(
@@ -278,9 +312,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       subtitle: Row(children: <Widget>[
-                        Icon(Icons.call_received,
-                        color: Colors.red,
-                        size: 19,),
+                        Icon(
+                          Icons.call_received,
+                          color: Colors.red,
+                          size: 19,
+                        ),
                         Text("  15 October, 10:09pm")
                       ]),
                       leading: CircleAvatar(
