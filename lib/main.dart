@@ -213,17 +213,30 @@ class _MyHomePageState extends State<MyHomePage> {
                                 bottom: 0,
                                 right: 0,
                                 child: CircleAvatar(
-                                  radius: 9,
-                                  backgroundColor: Color(0xff085E55),
-                                  
-                                  child: Icon(
-                                    Icons.add,
-                                    size: 17,
-                                    color: Colors.white,
-                                  ),
-                                ))
+                                    radius: 11,
+                                    backgroundColor: Colors.white,
+                                    child: CircleAvatar(
+                                      radius: 9,
+                                      backgroundColor: Color(0xff085E55),
+                                      child: Icon(
+                                        Icons.add,
+                                        size: 17,
+                                        color: Colors.white,
+                                      ),
+                                    )))
                           ],
-                        ))
+                        )),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      "    Recent updates",
+                      style: TextStyle(
+                        color: Color(0xff808080),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
+                      ),
+                    ),
                   ],
                 ))
               ]),
