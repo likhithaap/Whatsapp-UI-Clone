@@ -77,7 +77,46 @@ class status_page extends StatelessWidget {
                   child: Image.network('https://i.pravatar.cc/600'),
                   borderRadius: BorderRadius.circular(50.0),
                 ),
-              ))
+              )),
+          SizedBox(
+            height: 15,
+          ),
+          Text(
+            "    Viewed updates",
+            style: TextStyle(
+              color: Color(0xff808080),
+              fontWeight: FontWeight.w500,
+              fontSize: 15,
+            ),
+          ),
+          ListTile(
+              title: Text(
+                "BC Reddy",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text("Today, 9:04 am"),
+              leading: CircleAvatar(
+                radius: 24.0,
+                child: ClipRRect(
+                  child: Image.network('https://i.pravatar.cc/120'),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+              )),
+           ListTile(
+              title: Text(
+                "Likss",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text("Yesterday, 2:31pm"),
+              leading: CircleAvatar(
+                radius: 24.0,
+                child: ClipRRect(
+                  child: Image.network('https://i.pravatar.cc/420'),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+              )),
+          
+
         ],
       ))
     ]);
