@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 class status_page extends StatelessWidget {
   const status_page({Key? key}) : super(key: key);
@@ -9,6 +10,10 @@ class status_page extends StatelessWidget {
       Expanded(
           child: ListView(
         children: <Widget>[
+          CustomPaint(
+            size: Size(2, 2),
+            painter: statusring(),
+          ),
           ListTile(
               title: Text(
                 "My status",
@@ -65,7 +70,7 @@ class status_page extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50.0),
                 ),
               )),
-           ListTile(
+          ListTile(
               title: Text(
                 "KC",
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -75,6 +80,19 @@ class status_page extends StatelessWidget {
                 radius: 24.0,
                 child: ClipRRect(
                   child: Image.network('https://i.pravatar.cc/600'),
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+              )),
+          ListTile(
+              title: Text(
+                "YSI",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text("Yesterday, 11:49 pm"),
+              leading: CircleAvatar(
+                radius: 24.0,
+                child: ClipRRect(
+                  child: Image.network('https://i.pravatar.cc/800'),
                   borderRadius: BorderRadius.circular(50.0),
                 ),
               )),
@@ -102,7 +120,7 @@ class status_page extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50.0),
                 ),
               )),
-           ListTile(
+          ListTile(
               title: Text(
                 "Likss",
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -115,8 +133,6 @@ class status_page extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50.0),
                 ),
               )),
-          
-
         ],
       ))
     ]);
@@ -129,9 +145,40 @@ class statusring extends CustomPainter {
     // TODO: implement paint
     final Paint paint = Paint();
     paint.isAntiAlias = true;
-    paint.strokeWidth = 5.0;
-    paint.color = Color(0xff085E55);
+    paint.strokeWidth = 2.0;
+    paint.color = Color(0xff20C253);
     paint.style = PaintingStyle.stroke;
+    paint.strokeCap = StrokeCap.round;
+
+    canvas.drawCircle(Offset(40, 143), 27, paint);
+    //Arcs around listtile 2
+    canvas.drawArc(new Rect.fromLTWH(13, 188, 54, 54), 0, 3.14, false, paint);
+    canvas.drawArc(new Rect.fromLTWH(13, 188, 54, 54), 3.3, 2.8, false, paint);
+
+    //Arcs around listtile 3
+    canvas.drawArc(new Rect.fromLTWH(13, 260, 54, 54), 0, 1.1, false, paint);
+    canvas.drawArc(new Rect.fromLTWH(13, 260, 54, 54), 1.3, 1.1, false, paint);
+
+    canvas.drawArc(new Rect.fromLTWH(13, 260, 54, 54), 2.6, 1.1, false, paint);
+
+    
+
+    canvas.drawArc(new Rect.fromLTWH(13, 260, 54, 54), 5.1, 1.0, false, paint);
+
+    final Paint paint1 = Paint();
+    paint.isAntiAlias = true;
+    paint.strokeWidth = 2.0;
+    paint.color = Colors.grey;
+    paint.style = PaintingStyle.stroke;
+    paint.strokeCap = StrokeCap.round;
+    //arcs around listtile 1 in viewed updates
+    canvas.drawArc(new Rect.fromLTWH(13, 365, 54, 54), 0, 1.8666, false, paint);
+    canvas.drawArc(new Rect.fromLTWH(13, 365, 54, 54), 2.0666, 1.8666, false, paint);
+    canvas.drawArc(new Rect.fromLTWH(13, 365, 54, 54), 4.1333, 1.8666, false, paint);
+    //circle around listtile 2 in viewed  updates
+    canvas.drawCircle(Offset(40, 464), 27, paint);
+    //grey arc for listtile 3 in recent updates
+    canvas.drawArc(new Rect.fromLTWH(13, 260, 54, 54), 3.85, 1.1, false, paint);
   }
 
   @override
